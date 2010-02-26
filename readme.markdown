@@ -20,6 +20,7 @@ Starting Application
 Make sure the redis server is running.
 
 Run:
+	 python tests.py
    python app.py
 
 License
