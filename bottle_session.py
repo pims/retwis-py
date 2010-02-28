@@ -1,6 +1,12 @@
+# bottle_session.py - based on :
 # gmemsess.py - memcache-backed session Class for Google Appengine
 # Version 1.2
 #	Copyright 2008 Greg Fawcett <greg@vig.co.nz>
+
+#substituting memcache for redis
+# Version 0.1
+#	Copyright 2010 Tim Bart
+
 #
 #	This program is free software: you can redistribute it and/or modify
 #	it under the terms of the GNU General Public License as published by
