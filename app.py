@@ -64,7 +64,7 @@ def user_page(name):
   if user:
     counts = user.followees_count,user.followers_count,user.tweet_count
     logged_user = logged_in_user()
-    himself = logged_user.username == name 
+    himself = logged_user.username == name
     if logged_user:
       is_following = logged_user.following(user)
       

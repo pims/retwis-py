@@ -13,9 +13,13 @@
 		%end
 	%end
 	<div class="tweets">
-	%for tweet in posts:
-		<p><img src="/static/avatar.png" /> <strong><a href="/{{tweet.user.username}}">{{tweet.user.username}}</a></strong> {{tweet.content}}<span><a href="/{{username}}/statuses/{{tweet.id}}">permalink</a></span></p>
-	%end
+	%if posts:
+  	%for tweet in posts:
+  		<p><img src="/static/avatar.png" /> <strong><a href="/{{tweet.user.username}}">{{tweet.user.username}}</a></strong> {{tweet.content}}<span><a href="/{{username}}/statuses/{{tweet.id}}">permalink</a></span></p>
+  	%end
+  %else:
+   <p>{{username}} has posted any tweet yet</p>
+  %end
 	</div>
 </div>
 %include shared/side.tpl username=username,counts=counts
