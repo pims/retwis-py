@@ -9,7 +9,7 @@ class Timeline:
   def page(self,page):
     _from = (page-1)*10
     _to = (page)*10
-    return [Post(post_id) for post_ids in r.list_range('timeline',_from,_to)]
+    return [Post(post_id) for post_ids in r.lrange('timeline',_from,_to)]
 
 class Model(object):
   def __init__(self,id):
