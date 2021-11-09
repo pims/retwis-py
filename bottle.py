@@ -131,7 +131,7 @@ class BottleException(Exception):
 
 
 class HTTPResponse(BottleException):
-    """ Used to break execution and imediately finish the response """
+    """ Used to break execution and immediately finish the response """
     def __init__(self, output='', status=200, header=None):
         super(BottleException, self).__init__("HTTP Response %d" % status)
         self.status = int(status)
@@ -187,7 +187,7 @@ class Route(object):
         """ Create a Route. The route string may contain `:key`,
             `:key#regexp#` or `:#regexp#` tokens for each dynamic part of the
             route. These can be escaped with a backslash infront of the `:`
-            and are compleately ignored if static is true. A name may be used
+            and are completely ignored if static is true. A name may be used
             to refer to this route later (depends on Router)
         """
         self.route = route
@@ -400,7 +400,7 @@ class Bottle(object):
     def handle(self, url, method, catchall=True):
         """ Handle a single request. Return handler output, HTTPResponse or
         HTTPError. If catchall is true, all exceptions thrown within a
-        handler function are catched and returned as HTTPError(500).
+        handler function are caught and returned as HTTPError(500).
         """
         if not self.serve:
             return HTTPError(503, "Server stopped")
@@ -489,7 +489,7 @@ class Bottle(object):
 
 class Request(threading.local, DictMixin):
     """ Represents a single HTTP request using thread-local attributes.
-        The Resquest object wrapps a WSGI environment and can be used as such.
+        The Resquest object wraps a WSGI environment and can be used as such.
     """
     def __init__(self, environ=None, app=None):
         """ Create a new Request instance.
@@ -500,7 +500,7 @@ class Request(threading.local, DictMixin):
         self.bind(environ or {}, app)
 
     def bind(self, environ, app=None):
-        """ Bind a new WSGI enviroment and clear out all previously computed
+        """ Bind a new WSGI environment and clear out all previously computed
             attributes.
             
             This is done automatically for the global `bottle.request`
@@ -1237,7 +1237,7 @@ class BaseTemplate(object):
 
     @classmethod
     def search(cls, name, lookup=[]):
-        """ Search name in all directiries specified in lookup.
+        """ Search name in all directories specified in lookup.
         First without, then with common extentions. Return first hit. """
         if os.path.isfile(name): return name
         for spath in lookup:
@@ -1249,7 +1249,7 @@ class BaseTemplate(object):
                     return '%s.%s' % (fname, ext)
 
     def prepare(self):
-        """ Run preparatios (parsing, caching, ...).
+        """ Run preparations (parsing, caching, ...).
         It should be possible to call this again to refresh a template.
         """
         raise NotImplementedError
@@ -1534,7 +1534,7 @@ metadata about the current request into this instance of :class:`Request`.
 It is thread-save and can be accessed from within handler functions. """
 
 response = Response()
-""" The :class:`Bottle` WSGI handler uses metasata assigned to this instance
+""" The :class:`Bottle` WSGI handler uses metadata assigned to this instance
 of :class:`Response` to generate the WSGI response. """
 
 local = threading.local()
